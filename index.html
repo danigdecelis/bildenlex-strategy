@@ -199,6 +199,30 @@
     .about-links a { color: var(--gold); text-decoration: none; }
     .about-bio { font-size: 15px; color: var(--body-text); line-height: 1.7; }
 
+    /* Email sequence cards */
+    .email-sequence { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+    .email-card-v2 { background: var(--off-white); border-radius: 10px; padding: 24px 28px; border: 1px solid rgba(0,0,0,0.06); display: flex; gap: 20px; align-items: flex-start; }
+    .email-day { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 800; color: var(--gold); line-height: 1; flex-shrink: 0; min-width: 52px; }
+    .email-day span { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); display: block; margin-top: 2px; }
+    .email-subject { font-size: 15px; font-weight: 700; color: var(--dark-mid); margin-bottom: 6px; }
+    .email-hook { font-size: 13px; color: var(--body-text); line-height: 1.6; font-style: italic; }
+    .email-purpose { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-top: 8px; }
+
+    /* Before/After comparison */
+    .compare-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+    .compare-col { border-radius: 10px; overflow: hidden; }
+    .compare-header { padding: 14px 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 8px; }
+    .compare-header.before { background: #2a0a0a; color: #ff6b6b; }
+    .compare-header.after { background: #0a1f0a; color: #4caf50; }
+    .compare-header .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+    .compare-body { padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .compare-body.before-body { background: rgba(255,107,107,0.05); border: 1px solid rgba(255,107,107,0.15); border-top: none; border-radius: 0 0 10px 10px; }
+    .compare-body.after-body { background: rgba(76,175,80,0.05); border: 1px solid rgba(76,175,80,0.15); border-top: none; border-radius: 0 0 10px 10px; }
+    .compare-item { font-size: 14px; line-height: 1.5; display: flex; gap: 10px; align-items: flex-start; }
+    .compare-item .ci-icon { flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+    .compare-item.bad { color: rgba(255,107,107,0.8); }
+    .compare-item.good { color: rgba(76,175,80,0.9); }
+
     footer { background: var(--dark); padding: 36px 24px; border-top: 1px solid rgba(201,168,76,0.15); text-align: center; }
     .footer-logo { height: 36px; margin-bottom: 12px; }
     .footer-copy { font-size: 13px; color: rgba(255,255,255,0.4); }
@@ -555,7 +579,28 @@
         <span class="view">Ver Pagina en Vivo &rarr;</span>
       </div>
     </a>
-    <p class="body-text on-light" style="margin-top:32px;">En vez de: Trafico al blog que lee y desaparece sin dejar datos. Construimos: Trafico a la pagina del checklist, captura de email, seguimiento con valor hasta que el prospecto este listo, consulta calificada.</p>
+    <div class="compare-wrap" style="margin-top:32px;">
+      <div class="compare-col">
+        <div class="compare-header before"><span class="dot"></span> Lo que pasa hoy en bildenlex.com</div>
+        <div class="compare-body before-body">
+          <div class="compare-item bad"><span class="ci-icon">✕</span> El visitante llega al blog, lee y sale. Sin datos, sin seguimiento posible.</div>
+          <div class="compare-item bad"><span class="ci-icon">✕</span> No hay lead magnet. Nada que justifique dejar el email.</div>
+          <div class="compare-item bad"><span class="ci-icon">✕</span> El unico paso disponible es WhatsApp o rellenar el formulario de contacto, lo que requiere ya estar decidido.</div>
+          <div class="compare-item bad"><span class="ci-icon">✕</span> 150K visitas al ano. Datos capturados: 0.</div>
+          <div class="compare-item bad"><span class="ci-icon">✕</span> Si tarda 3 meses en decidir, Bildenlex no existe para el durante esos 3 meses.</div>
+        </div>
+      </div>
+      <div class="compare-col">
+        <div class="compare-header after"><span class="dot"></span> Con el sistema que proponemos</div>
+        <div class="compare-body after-body">
+          <div class="compare-item good"><span class="ci-icon">✓</span> El visitante llega al blog y ve la oferta del checklist. Deja su email antes de salir.</div>
+          <div class="compare-item good"><span class="ci-icon">✓</span> Recibe el checklist de inmediato. Primera impresion de valor real.</div>
+          <div class="compare-item good"><span class="ci-icon">✓</span> Durante 30 dias recibe emails utiles. Bildenlex sigue presente sin esfuerzo de Guillermo.</div>
+          <div class="compare-item good"><span class="ci-icon">✓</span> Cuando decide actuar, Bildenlex es el despacho que ya conoce y en el que ya confia.</div>
+          <div class="compare-item good"><span class="ci-icon">✓</span> La consulta entra calificada. Guillermo ya sabe que necesita. No empieza desde cero.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -576,8 +621,63 @@
       <p class="body-text on-light" style="margin-top:16px; font-style:italic; color:var(--muted);">El objetivo es que cuando un emprendedor necesite un abogado de propiedad intelectual, Guillermo sea el nombre que ya conoce.</p>
     </div>
 
-    <div class="note-box">
-      <p><strong>Nota sobre el seguimiento de la base de datos:</strong> Una vez que el funnel este capturando leads de forma constante, el paso logico siguiente es un sistema que mantenga el contacto con esos prospectos durante el tiempo que tarde en madurar su decision. El seguimiento automatizado permite mantener una relacion constante de forma no invasiva, educar al prospecto y estar presente exactamente cuando decide actuar. No lo incluimos como entregable en este primer paquete porque queremos empezar por lo que genera el mayor impacto inmediato, pero es el complemento natural del sistema de captura.</p>
+    <hr class="gold" style="margin: 48px 0;">
+
+    <div class="build-section">
+      <div class="build-title">Secuencia de Email de Seguimiento Automatizada</div>
+      <p class="build-desc">Las decisiones legales tardan semanas o meses en madurar. El sistema de email no es un boletin informativo, es el mecanismo que mantiene a Bildenlex presente en la mente del prospecto desde el momento en que descargo el checklist hasta que esta listo para llamar. Sin que Guillermo tenga que hacer nada.</p>
+      <p class="build-desc">Estos son los 6 emails que construiriamos para la secuencia de bienvenida:</p>
+      <div class="email-sequence">
+        <div class="email-card-v2">
+          <div class="email-day">D0<span>Inmediato</span></div>
+          <div>
+            <div class="email-subject">Asunto: Tu checklist legal ya esta aqui (y hay una cosa que no esperes para hacer)</div>
+            <div class="email-hook">"Gracias por descargarlo. Antes de que lo abras, hay un punto del checklist que la mayoria de los emprendedores pasa por alto en la primera lectura..."</div>
+            <div class="email-purpose">Entrega + primer gancho de valor</div>
+          </div>
+        </div>
+        <div class="email-card-v2">
+          <div class="email-day">D3<span>Dia 3</span></div>
+          <div>
+            <div class="email-subject">Asunto: El error que le salio caro a un fundador que no registro su marca a tiempo</div>
+            <div class="email-hook">Un caso real anonimizado sobre un emprendedor que perdio su marca por no actuar a tiempo. No es para generar miedo. Es para que el prospecto entienda por que el tema no puede esperar.</div>
+            <div class="email-purpose">Educacion + urgencia sin presion</div>
+          </div>
+        </div>
+        <div class="email-card-v2">
+          <div class="email-day">D7<span>Dia 7</span></div>
+          <div>
+            <div class="email-subject">Asunto: Cuanto cuesta realmente registrar una marca en Argentina (sin sorpresas)</div>
+            <div class="email-hook">La pregunta que todos buscan en Google pero nadie responde con claridad. Bildenlex la responde, gratis, antes de que el prospecto siquiera haya pedido una consulta.</div>
+            <div class="email-purpose">Posicionamiento como referente</div>
+          </div>
+        </div>
+        <div class="email-card-v2">
+          <div class="email-day">D14<span>Dia 14</span></div>
+          <div>
+            <div class="email-subject">Asunto: Tres preguntas que deberias poder responder sobre tu empresa hoy</div>
+            <div class="email-hook">Un mini-autodiagnostico que lleva al prospecto a identificar sus propias lagunas legales. Al final, una invitacion natural a la consulta sin presion de cierre.</div>
+            <div class="email-purpose">Calificacion + CTA suave</div>
+          </div>
+        </div>
+        <div class="email-card-v2">
+          <div class="email-day">D21<span>Dia 21</span></div>
+          <div>
+            <div class="email-subject">Asunto: Lo que diferencia a Bildenlex de cualquier otro despacho de PI</div>
+            <div class="email-hook">La historia de Guillermo, el Global Legal Hackathon, la docencia en cuatro paises. No como curriculum sino como prueba de que el despacho entiende el mundo tech desde adentro.</div>
+            <div class="email-purpose">Construccion de autoridad</div>
+          </div>
+        </div>
+        <div class="email-card-v2">
+          <div class="email-day">D30<span>Dia 30</span></div>
+          <div>
+            <div class="email-subject">Asunto: Guillermo, una pregunta rapida</div>
+            <div class="email-hook">"Han pasado 30 dias desde que descargaste el checklist. Tengo curiosidad: llegaste a revisar la situacion legal de tu empresa? Si necesitas que hablemos, aqui estoy."</div>
+            <div class="email-purpose">CTA directo + cierre natural</div>
+          </div>
+        </div>
+      </div>
+      <p class="body-text on-light" style="margin-top:24px; font-style:italic; color:var(--muted);">El objetivo de esta secuencia no es vender. Es asegurarse de que cuando el prospecto finalmente decida actuar, Bildenlex sea el primer nombre que le venga a la mente.</p>
     </div>
   </div>
 </div>
@@ -586,8 +686,8 @@
 <div class="card dark">
   <div class="inner">
     <span class="section-label">Nuestra Oferta y Garantia</span>
-    <div class="guarantee-box" style="margin-bottom:48px;">
-      <p style="color:var(--dark); font-size:20px; font-weight:700; font-style:italic;">"Tendremos tu sistema completo en vivo en 30 dias y generando consultas calificadas en 90 dias. Si no lo logramos, seguimos trabajando sin costo adicional hasta que lo hagamos."</p>
+    <div class="guarantee-box" style="margin-bottom:48px; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.4);">
+      <p style="color:var(--white); font-size:20px; font-weight:700; font-style:italic; line-height:1.6;">"Tendremos tu sistema completo en vivo en 30 dias y generando consultas calificadas en 90 dias. Si no lo logramos, seguimos trabajando sin costo adicional hasta que lo hagamos."</p>
     </div>
     <h3 style="color:var(--white); margin-bottom:8px;">Asi funciona exactamente:</h3>
     <div class="steps-list">
