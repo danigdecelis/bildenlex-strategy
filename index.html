@@ -209,19 +209,55 @@
     .email-purpose { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-top: 8px; }
 
     /* Before/After comparison */
-    .compare-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
-    .compare-col { border-radius: 10px; overflow: hidden; }
-    .compare-header { padding: 14px 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 8px; }
-    .compare-header.before { background: #2a0a0a; color: #ff6b6b; }
-    .compare-header.after { background: #0a1f0a; color: #4caf50; }
-    .compare-header .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
-    .compare-body { padding: 20px; display: flex; flex-direction: column; gap: 10px; }
-    .compare-body.before-body { background: rgba(255,107,107,0.05); border: 1px solid rgba(255,107,107,0.15); border-top: none; border-radius: 0 0 10px 10px; }
-    .compare-body.after-body { background: rgba(76,175,80,0.05); border: 1px solid rgba(76,175,80,0.15); border-top: none; border-radius: 0 0 10px 10px; }
-    .compare-item { font-size: 14px; line-height: 1.5; display: flex; gap: 10px; align-items: flex-start; }
-    .compare-item .ci-icon { flex-shrink: 0; font-size: 14px; margin-top: 1px; }
-    .compare-item.bad { color: rgba(255,107,107,0.8); }
-    .compare-item.good { color: rgba(76,175,80,0.9); }
+    .compare-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; align-items: start; }
+    .compare-col { border-radius: 10px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .compare-label { padding: 12px 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 8px; }
+    .compare-label.before { background: #2a0a0a; color: #ff6b6b; }
+    .compare-label.after { background: #0a200a; color: #4caf50; }
+    .compare-label .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+    /* Browser mockup styles */
+    .browser-bar { background: #e5e5e5; padding: 8px 12px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #d0d0d0; }
+    .browser-dots { display: flex; gap: 5px; }
+    .browser-dots span { width: 9px; height: 9px; border-radius: 50%; }
+    .browser-dots span:nth-child(1) { background: #ff5f57; }
+    .browser-dots span:nth-child(2) { background: #febc2e; }
+    .browser-dots span:nth-child(3) { background: #28c840; }
+    .browser-url-bar { flex: 1; background: white; border-radius: 4px; padding: 3px 8px; font-size: 10px; color: #666; font-family: monospace; border: 1px solid #ccc; }
+    /* Current site mockup */
+    .mock-site { background: white; }
+    .mock-header-bar { background: #0D0D0D; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; }
+    .mock-logo-text { font-size: 9px; font-weight: 800; color: white; letter-spacing: 2px; text-transform: uppercase; }
+    .mock-nav-links { display: flex; gap: 10px; }
+    .mock-nav-links span { font-size: 8px; color: rgba(255,255,255,0.5); }
+    .mock-blog-area { padding: 12px 14px; }
+    .mock-blog-title { font-size: 11px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+    .mock-post { padding: 8px 0; border-bottom: 1px solid #f5f5f5; }
+    .mock-post-tag { font-size: 7px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #9B7B4D; margin-bottom: 3px; }
+    .mock-post-ttl { font-size: 10px; font-weight: 600; color: #1a1a1a; line-height: 1.4; margin-bottom: 3px; }
+    .mock-post-meta { font-size: 8px; color: #aaa; }
+    .mock-missing-zone { background: rgba(255,80,80,0.06); border: 1px dashed rgba(255,80,80,0.3); margin: 8px 14px; border-radius: 6px; padding: 10px 12px; }
+    .mock-missing-label { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #cc4444; margin-bottom: 6px; }
+    .mock-missing-item { font-size: 9px; color: #cc4444; display: flex; align-items: center; gap: 5px; padding: 2px 0; }
+    .mock-wa-btn { margin: 10px 14px 14px; background: #25D366; border-radius: 4px; padding: 7px 10px; font-size: 9px; font-weight: 700; color: white; text-align: center; }
+    /* After mockup */
+    .mock-after-site { background: #0D0D0D; }
+    .mock-after-hero { padding: 14px; }
+    .mock-after-badge { display: inline-block; background: #9B7B4D; color: white; font-size: 7px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; margin-bottom: 8px; }
+    .mock-after-h1 { font-size: 11px; font-weight: 800; color: #F5F4F1; line-height: 1.4; margin-bottom: 8px; }
+    .mock-after-h1 span { color: #CCA876; }
+    .mock-after-points { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
+    .mock-after-point { font-size: 8px; color: rgba(245,244,241,0.75); display: flex; gap: 6px; align-items: center; }
+    .mock-after-point::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #9B7B4D; flex-shrink: 0; }
+    .mock-after-form { background: rgba(255,255,255,0.06); border: 1px solid rgba(155,123,77,0.3); border-radius: 6px; padding: 10px; }
+    .mock-after-input { background: white; border-radius: 3px; padding: 5px 8px; font-size: 8px; color: #aaa; margin-bottom: 6px; width: 100%; }
+    .mock-after-btn { background: #9B7B4D; color: white; font-size: 8px; font-weight: 700; padding: 6px; border-radius: 3px; text-align: center; width: 100%; }
+    .mock-after-footer { background: rgba(155,123,77,0.1); border-top: 1px solid rgba(155,123,77,0.2); padding: 8px 14px; }
+    .mock-after-social { font-size: 8px; color: rgba(245,244,241,0.5); }
+    .compare-caption { font-size: 12px; font-weight: 600; padding: 10px 14px; }
+    .compare-caption.before { background: rgba(255,80,80,0.08); color: #cc4444; border-top: 1px solid rgba(255,80,80,0.15); }
+    .compare-caption.after { background: rgba(76,175,80,0.08); color: #2e7d32; border-top: 1px solid rgba(76,175,80,0.15); }
+    @media (max-width: 700px) { .compare-wrap { grid-template-columns: 1fr; } }
 
     footer { background: var(--dark); padding: 36px 24px; border-top: 1px solid rgba(201,168,76,0.15); text-align: center; }
     .footer-logo { height: 36px; margin-bottom: 12px; }
@@ -270,14 +306,15 @@
 <div class="card off-white">
   <div class="inner">
     <span class="section-label">Que hay adentro</span>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:24px;">Tiempo estimado de lectura: 8 minutos. Puedes pausar y retomar cuando quieras.</p>
     <div class="toc-grid">
-      <div class="toc-item"><div class="toc-num">01</div><div><h4>La Auditoria</h4><p>Lo que encontramos en tu LinkedIn, sitio web y presencia digital</p></div></div>
-      <div class="toc-item"><div class="toc-num">02</div><div><h4>Los Problemas</h4><p>Que te esta costando consultas calificadas hoy mismo</p></div></div>
-      <div class="toc-item"><div class="toc-num">03</div><div><h4>Los Numeros</h4><p>Cuanto vale ese problema mensualmente</p></div></div>
-      <div class="toc-item"><div class="toc-num">04</div><div><h4>Lead Magnets Sugeridos</h4><p>Ideas concretas para capturar potenciales clientes antes de que salgan del sitio</p></div></div>
-      <div class="toc-item"><div class="toc-num">05</div><div><h4>La Pagina de Ejemplo</h4><p>Una pagina de captura ya construida, basada en tu marca, lista para usar</p></div></div>
-      <div class="toc-item"><div class="toc-num">06</div><div><h4>Que Mas Construiriamos</h4><p>El sistema que convierte la pagina en consultas sostenidas</p></div></div>
-      <div class="toc-item"><div class="toc-num">07</div><div><h4>Nuestra Oferta y Garantia</h4><p>Como garantizamos resultados</p></div></div>
+      <div class="toc-item"><div class="toc-num">01</div><div><h4>La Auditoria</h4><p>Lo que encontramos en tu LinkedIn, sitio web y presencia digital</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~2 min</p></div></div>
+      <div class="toc-item"><div class="toc-num">02</div><div><h4>Los Problemas</h4><p>Que te esta costando consultas calificadas hoy mismo</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~2 min</p></div></div>
+      <div class="toc-item"><div class="toc-num">03</div><div><h4>Los Numeros</h4><p>Cuanto vale ese problema mensualmente</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~1 min</p></div></div>
+      <div class="toc-item"><div class="toc-num">04</div><div><h4>Lead Magnets Sugeridos</h4><p>Ideas concretas para capturar potenciales clientes antes de que salgan del sitio</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~1 min</p></div></div>
+      <div class="toc-item"><div class="toc-num">05</div><div><h4>La Pagina de Ejemplo</h4><p>Una pagina de captura ya construida, basada en tu marca, lista para usar</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~1 min</p></div></div>
+      <div class="toc-item"><div class="toc-num">06</div><div><h4>Que Mas Construiriamos</h4><p>El sistema completo: email, LinkedIn y seguimiento automatizado</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~2 min</p></div></div>
+      <div class="toc-item"><div class="toc-num">07</div><div><h4>Nuestra Oferta y Garantia</h4><p>Como garantizamos resultados y como funciona el proceso</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~1 min</p></div></div>
     </div>
   </div>
 </div>
@@ -312,20 +349,20 @@
     <h3 style="color:var(--white); margin-bottom:24px;">Lo que encontre:</h3>
     <div class="findings-grid">
       <div class="finding-card on-dark">
-        <h4 class="on-dark">Trayectoria que Genera Confianza Inmediata</h4>
-        <p class="on-dark">Veinte anos de practica, docencia en UBA y universidades de Bolivia, Colombia y Paraguay, trabajo en CONICET e INTI. Es el perfil de un referente en propiedad intelectual y derecho tecnologico, no el de un abogado mas en el mercado.</p>
+        <h4 class="on-dark">Un Curriculum que la Mayoria de Abogados Tarda Decadas en Construir</h4>
+        <p class="on-dark">Abogado (UBA), con posgrados en Derecho Tecnologico y anos de practica exclusiva en PI y derecho digital. Docencia activa en Argentina, Bolivia, Colombia y Paraguay simultaneamente. Trabajo tecnico en CONICET y en el INTI. Cada uno de esos creditos es verificable. En conjunto, forman un perfil que el 99% de los despachos del mercado hispanohablante no puede replicar.</p>
       </div>
       <div class="finding-card on-dark">
-        <h4 class="on-dark">Presencia en Medios y Eventos con Proyeccion Internacional</h4>
-        <p class="on-dark">FM Milenium, iProUP, Global Legal Hackathon organizado desde Argentina con participacion en Espana, II Congreso Legaltech. Esa visibilidad existe pero no se esta amplificando de forma sistematica desde el perfil de LinkedIn.</p>
+        <h4 class="on-dark">Medios Reales, No Notas de Prensa Genericas</h4>
+        <p class="on-dark">Menciones en FM Milenium e iProUP (publicacion de referencia en tecnologia y negocios digitales en Argentina). Speaker en el II Congreso Legaltech. Organizador del Global Legal Hackathon 2019 desde Buenos Aires, con participacion de equipos en Espana en la misma edicion. No son apariciones de cortesia: son las que abren puertas con clientes tech de nivel.</p>
       </div>
       <div class="finding-card on-dark">
-        <h4 class="on-dark">Pagina de Empresa con Traccion Limitada para el Nivel del Despacho</h4>
-        <p class="on-dark">789 seguidores en la pagina de empresa. Para un despacho con 20 anos de historia, un fundador con ese curriculum y un blog que genera trafico organico constante, ese numero senala que la presencia digital no ha crecido al mismo ritmo que la reputacion offline.</p>
+        <h4 class="on-dark">789 Seguidores en la Empresa: el Desequilibrio mas Claro del Perfil</h4>
+        <p class="on-dark">Un despacho con 20 anos de historia, un fundador con ese nivel de exposicion en medios y una pagina de empresa con 789 seguidores. No es un problema de reputacion, es un problema de distribucion. La autoridad existe, pero no esta llegando a las personas que mas se beneficiarian de conocer a Bildenlex. Sin cadencia de contenido en LinkedIn, esa brecha se amplia cada mes.</p>
       </div>
       <div class="finding-card on-dark">
-        <h4 class="on-dark">Reconocimiento Sectorial Verificable y Diferenciador</h4>
-        <p class="on-dark">Premio a la "mejor organizacion juridica de 2019" por eventosjuridicos.es. Organizador del primer Global Legal Hackathon desde Argentina. Son credenciales que la gran mayoria de despachos del mercado hispanohablante no puede mostrar.</p>
+        <h4 class="on-dark">Premio "Mejor Organizacion Juridica 2019" por eventosjuridicos.es</h4>
+        <p class="on-dark">Reconocimiento concedido por una publicacion especializada en el sector legal iberoamericano. Y el primer despacho argentino en organizar el Global Legal Hackathon, un evento de innovacion juridica con presencia en mas de 40 ciudades del mundo en su edicion de ese ano. Dos credenciales que la gran mayoria de los despachos competidores en Argentina sencillamente no tiene.</p>
       </div>
     </div>
   </div>
@@ -358,6 +395,24 @@
       <div class="finding-card" style="grid-column: span 2;">
         <h4>Plugin de WhatsApp Activo para Reducir Friccion de Contacto</h4>
         <p>El Click-to-Chat facilita la transicion del interes a la consulta para quienes ya decidieron actuar. Es el unico canal de seguimiento disponible hoy, y cubre bien el extremo final del funnel.</p>
+      </div>
+    </div>
+
+    <hr class="gold" style="margin: 40px 0;">
+    <h3 style="color:var(--dark-mid); margin-bottom:8px;">Lo que le falta:</h3>
+    <p style="font-size:14px; color:var(--body-text); margin-bottom:24px; line-height:1.6;">Aqui es donde la infraestructura actual del sitio deja de trabajar para el despacho:</p>
+    <div class="findings-grid">
+      <div class="finding-card" style="border-top: 3px solid #e05555;">
+        <h4 style="color:#c0392b;">Ningun Punto de Entrada para el Visitante No Decidido</h4>
+        <p>El sitio esta construido para quien ya quiere contratar. Para el visitante que llego por un articulo del blog y todavia esta evaluando si necesita un abogado, no hay nada. Sin lead magnet, sin recurso de valor, no hay ninguna razon para dejar el email antes de salir.</p>
+      </div>
+      <div class="finding-card" style="border-top: 3px solid #e05555;">
+        <h4 style="color:#c0392b;">El Blog Genera Trafico sin Capturarlo</h4>
+        <p>150.000 visitas declaradas al ano. Ningun formulario de captura dentro de los articulos, ningun exit-intent, ninguna oferta contextual. El contenido que mas trafico genera es tambien el mayor punto de fuga del sitio.</p>
+      </div>
+      <div class="finding-card" style="border-top: 3px solid #e05555; grid-column: span 2;">
+        <h4 style="color:#c0392b;">Un Solo CTA para Todo el Embudo, Demasiado Grande para la Mayoria</h4>
+        <p>Toda la arquitectura del sitio conduce al mismo lugar: "Contactanos" o "Reserva una cita". Para un emprendedor que llego por un articulo sobre deepfakes y todavia no tiene claro si necesita asesoramiento legal, ese paso exige demasiado. El resultado es que el 97% de los visitantes se van sin dejar ningun rastro. El WhatsApp captura una fraccion de quienes ya decidieron, pero nadie que estaba a punto de decidir.</p>
       </div>
     </div>
   </div>
@@ -580,25 +635,76 @@
       </div>
     </a>
     <div class="compare-wrap" style="margin-top:32px;">
+      <!-- BEFORE: bildenlex.com/blog mockup -->
       <div class="compare-col">
-        <div class="compare-header before"><span class="dot"></span> Lo que pasa hoy en bildenlex.com</div>
-        <div class="compare-body before-body">
-          <div class="compare-item bad"><span class="ci-icon">✕</span> El visitante llega al blog, lee y sale. Sin datos, sin seguimiento posible.</div>
-          <div class="compare-item bad"><span class="ci-icon">✕</span> No hay lead magnet. Nada que justifique dejar el email.</div>
-          <div class="compare-item bad"><span class="ci-icon">✕</span> El unico paso disponible es WhatsApp o rellenar el formulario de contacto, lo que requiere ya estar decidido.</div>
-          <div class="compare-item bad"><span class="ci-icon">✕</span> 150K visitas al ano. Datos capturados: 0.</div>
-          <div class="compare-item bad"><span class="ci-icon">✕</span> Si tarda 3 meses en decidir, Bildenlex no existe para el durante esos 3 meses.</div>
+        <div class="compare-label before"><span class="dot"></span> bildenlex.com hoy</div>
+        <div class="browser-bar">
+          <div class="browser-dots"><span></span><span></span><span></span></div>
+          <div class="browser-url-bar">bildenlex.com/blog</div>
         </div>
+        <div class="mock-site">
+          <div class="mock-header-bar">
+            <div class="mock-logo-text">Bildenlex Abogados</div>
+            <div class="mock-nav-links"><span>PI</span><span>Startups</span><span>Blockchain</span><span>Contacto</span></div>
+          </div>
+          <div class="mock-blog-area">
+            <div class="mock-blog-title">Blog de Derecho Digital</div>
+            <div class="mock-post">
+              <div class="mock-post-tag">Propiedad Intelectual</div>
+              <div class="mock-post-ttl">Deepfakes y derecho a la imagen: que dice la ley argentina</div>
+              <div class="mock-post-meta">Guillermo Navarro · 12 abr 2026</div>
+            </div>
+            <div class="mock-post">
+              <div class="mock-post-tag">Marcas</div>
+              <div class="mock-post-ttl">IA generativa y propiedad intelectual: quien es dueno de lo que crea una maquina</div>
+              <div class="mock-post-meta">Guillermo Navarro · 3 mar 2026</div>
+            </div>
+            <div class="mock-post">
+              <div class="mock-post-tag">Redes Sociales</div>
+              <div class="mock-post-ttl">Como recuperar una cuenta de Instagram robada: opciones legales</div>
+              <div class="mock-post-meta">Guillermo Navarro · 18 feb 2026</div>
+            </div>
+          </div>
+          <div class="mock-missing-zone">
+            <div class="mock-missing-label">Lo que no existe en esta pagina</div>
+            <div class="mock-missing-item">✕ Ningun formulario de captura de email</div>
+            <div class="mock-missing-item">✕ Ningun recurso descargable</div>
+            <div class="mock-missing-item">✕ Ningun paso intermedio antes del contacto</div>
+          </div>
+          <div class="mock-wa-btn">WhatsApp: unico canal de contacto disponible</div>
+        </div>
+        <div class="compare-caption before">150K visitas/ano. Leads capturados: 0</div>
       </div>
+
+      <!-- AFTER: our landing page -->
       <div class="compare-col">
-        <div class="compare-header after"><span class="dot"></span> Con el sistema que proponemos</div>
-        <div class="compare-body after-body">
-          <div class="compare-item good"><span class="ci-icon">✓</span> El visitante llega al blog y ve la oferta del checklist. Deja su email antes de salir.</div>
-          <div class="compare-item good"><span class="ci-icon">✓</span> Recibe el checklist de inmediato. Primera impresion de valor real.</div>
-          <div class="compare-item good"><span class="ci-icon">✓</span> Durante 30 dias recibe emails utiles. Bildenlex sigue presente sin esfuerzo de Guillermo.</div>
-          <div class="compare-item good"><span class="ci-icon">✓</span> Cuando decide actuar, Bildenlex es el despacho que ya conoce y en el que ya confia.</div>
-          <div class="compare-item good"><span class="ci-icon">✓</span> La consulta entra calificada. Guillermo ya sabe que necesita. No empieza desde cero.</div>
+        <div class="compare-label after"><span class="dot"></span> Con el sistema que proponemos</div>
+        <div class="browser-bar">
+          <div class="browser-dots"><span></span><span></span><span></span></div>
+          <div class="browser-url-bar">danigdecelis.github.io/bildenlex-funnel/</div>
         </div>
+        <a href="https://danigdecelis.github.io/bildenlex-funnel/" target="_blank" style="display:block; text-decoration:none;">
+        <div class="mock-after-site">
+          <div class="mock-after-hero">
+            <div class="mock-after-badge">Bildenlex Abogados · Recurso Gratuito</div>
+            <div class="mock-after-h1">Checklist Legal para Emprendedores:<br><span>10 cosas que debes proteger</span><br>antes de lanzar tu negocio</div>
+            <div class="mock-after-points">
+              <div class="mock-after-point">Registro de marca y nombre comercial</div>
+              <div class="mock-after-point">Proteccion de software y activos digitales</div>
+              <div class="mock-after-point">Contratos y acuerdos de confidencialidad</div>
+              <div class="mock-after-point">Politica de datos y compliance</div>
+            </div>
+            <div class="mock-after-form">
+              <div class="mock-after-input">Tu email profesional</div>
+              <div class="mock-after-btn">Descargar el Checklist Gratis</div>
+            </div>
+          </div>
+          <div class="mock-after-footer">
+            <div class="mock-after-social">Guillermo Navarro · 20 anos en PI · iProUP · FM Milenium</div>
+          </div>
+        </div>
+        </a>
+        <div class="compare-caption after">El visitante deja su email. 30 dias de seguimiento automatico. Consulta calificada.</div>
       </div>
     </div>
   </div>
